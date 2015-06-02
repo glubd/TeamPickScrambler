@@ -1,0 +1,15 @@
+
+<form method = "post" action = "/teams">
+  <label for="names">Enter Names Here</label>
+  <input type = "textarea" name = "list">
+  <p>
+    <label for="lists">How many teams would you like to divide all of these bodies into?</label>
+    <input type = "textarea" name = "num_teams">
+  </p>
+
+  <input type = "submit">
+  <br />
+  <br />
+  <br />
+  <%= @result.inspect %>
+</form>
