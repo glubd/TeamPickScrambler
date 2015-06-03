@@ -1,14 +1,12 @@
 
 <form method = "post" action = "/teams">
-  <label for="names"><font size="10" color="yellow">Enter Names Here: </font></label>
-  <input type = "textarea" name = "list">
+    <label for="names"><font size="10" color="yellow">Enter Names Here: </font></label>
+  <input type = "textarea" name = "list" value="<%=session[:contestants]%>">
   <p>
-    <label for="lists"><font size="5" color="yellow">How many teams would you like to divide all of these bodies into?</font></label>
-    <input type = "textarea" name = "num_teams">
+  <label for="lists"><font size="5" color="yellow" >How many teams would you like to divide all of these bodies into?</font></label>
+    <input type = "textarea" name = "num_teams" value="<%=session[:num_teams]%>">
   </p>
-
   <input type = "submit">
-  <br />
   <br />
   <br />
 </form>
@@ -17,10 +15,10 @@
 
   <%if @teams.is_a? Hash%>
     <label for="names"><font size="05" color="yellow">Teams are: </font></label>
-    <br>
+    <br><br>
     <%@teams.each do |team, members| %>
     <strong><%="Team #{team}: " %></strong>
-    <%    members.each do |member|    %>
+        <% members.each do |member|    %>
             <%=member%>
         <%end  %>
         <br> 
