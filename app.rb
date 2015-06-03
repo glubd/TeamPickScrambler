@@ -18,15 +18,15 @@ post "/teams" do
 
   if (contestants.length < 1)
 
-    @result = "You should have at least one person"
+    @teams = "You should have at least one person"
 
   elsif (num_teams < 1)
 
-    @result = "You must have at least one team"
+    @teams = "You must have at least one team"
     
   elsif (contestants.length < num_teams)
 
-    @result = "Number of teams must not be greater than number of contestants"
+    @teams = "Number of teams must not be greater than number of contestants"
   
   else
   
@@ -55,7 +55,7 @@ post "/teams" do
       end
     end 
 
-    @result = hash_teams
+    @teams = hash_teams
 
   end
 

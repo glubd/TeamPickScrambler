@@ -11,5 +11,21 @@
   <br />
   <br />
   <br />
-  <%= @result.inspect %>
 </form>
+
+<%if @teams  %>
+
+  <%if @teams.is_a? Hash%>
+    <h3>Teams are</h3>
+    <%@teams.each do |team, members| %>
+    <strong><%="Team #{team}: " %></strong>
+    <%    members.each do |member|    %>
+            <%=member%>
+        <%end  %>
+        <br> 
+        <% end  %>
+  <%else %>
+  <%= "#{@teams}" %>
+  <%end%>
+        
+<%end%>
