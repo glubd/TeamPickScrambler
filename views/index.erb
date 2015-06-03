@@ -1,9 +1,9 @@
 
 <form method = "post" action = "/teams">
-  <label for="names">Enter Names Here</label>
+  <label for="names"><font size="10" color="yellow">Enter Names Here: </font></label>
   <input type = "textarea" name = "list">
   <p>
-    <label for="lists">How many teams would you like to divide all of these bodies into?</label>
+    <label for="lists"><font size="5" color="yellow">How many teams would you like to divide all of these bodies into?</font></label>
     <input type = "textarea" name = "num_teams">
   </p>
 
@@ -16,7 +16,8 @@
 <%if @teams  %>
 
   <%if @teams.is_a? Hash%>
-    <h3>Teams are</h3>
+    <label for="names"><font size="05" color="yellow">Teams are: </font></label>
+    <br>
     <%@teams.each do |team, members| %>
     <strong><%="Team #{team}: " %></strong>
     <%    members.each do |member|    %>
